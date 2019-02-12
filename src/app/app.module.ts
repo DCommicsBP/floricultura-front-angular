@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http', 
+import * as axios from 'axios'
 
 import { AppComponent } from './app.component';
 import { PlantasComponent } from './plantas/plantas.component';
@@ -32,9 +34,11 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
-    BrowserModule
+    BrowserModule, 
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: Http, useValue: axios} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//https://angular.io/guide/http
