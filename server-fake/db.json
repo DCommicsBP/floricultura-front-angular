@@ -1,0 +1,12 @@
+{
+    "cliente": [
+      { "id": 1, "name": "json-server", "email": "typicode" }
+    ],
+    "usuario": [
+      { "id": 1, "senha": "some comment", "usuario": "" }
+    ],
+    "plantas":[ 
+        
+        { "id": 1, "name": "typicode", "type": "typicode" }
+    ]
+  }

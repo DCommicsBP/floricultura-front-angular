@@ -9,6 +9,7 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { PlantaDetalheComponent } from './plantas/planta-detalhe/planta-detalhe.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
     ClientesComponent,
     NavbarComponent,
     FooterComponent, 
-    HomeComponent
+    HomeComponent, PlantaDetalheComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
