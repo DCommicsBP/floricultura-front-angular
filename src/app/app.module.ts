@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http', 
-import * as axios from 'axios'
+import {HttpClientModule} from '@angular/common/http';
+import { ClientesModule } from './clientes/clientes.module';
 
 import { AppComponent } from './app.component';
 import { PlantasComponent } from './plantas/plantas.component';
@@ -21,23 +21,24 @@ const routes: Routes = [
   { path: 'clientes', component:ClientesComponent },
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,
     PlantasComponent,
     UsuariosComponent,
-    ClientesComponent,
     NavbarComponent,
     FooterComponent, 
-    HomeComponent, PlantaDetalheComponent
+    HomeComponent, 
+    PlantaDetalheComponent,
+    ClientesComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule, 
-    HttpClientModule
+    HttpClientModule, 
+    ClientesModule
   ],
-  providers: [{provide: Http, useValue: axios} ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
