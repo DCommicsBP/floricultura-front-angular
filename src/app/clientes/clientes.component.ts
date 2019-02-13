@@ -12,7 +12,13 @@ export class ClientesComponent implements OnInit {
 
   clientes: any = new ClientesService().getClientes(); 
   ngOnInit() {
-    console.log(this.clientes)
+    console.log(this.clientes);
+
   }
 
+  makeTemplate(){
+    return `
+    ${this.clientes.id}
+    `; 
+  }
 }

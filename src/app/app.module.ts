@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PlantaDetalheComponent } from './plantas/planta-detalhe/planta-detalhe.component';
+import { ClienteDetalheComponent } from './clientes/cliente-detalhe/cliente-detalhe.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'plantas', component: PlantasComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'clientes', component:ClientesComponent },
+  {path: 'cliente/cliente-detalhe/:id', component:ClienteDetalheComponent}
 ];
 
 @NgModule({
@@ -41,5 +43,7 @@ const routes: Routes = [
   providers: [ ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 //https://angular.io/guide/http
+//https://cursos.alura.com.br/forum/topico-cors-com-fetch-api-44915
