@@ -1,38 +1,23 @@
 import {NgModule, Injectable} from '@angular/core'
 import { Cliente } from './cliente.class';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+
 
 @Injectable()
 export class ClientesService{
-    constructor(){
-        this.clientes = this.getClientes()
+    clis:Array<Cliente>; 
+    constructor(private http: HttpClient){
     }
 
     clientes: Array<Cliente> = []; 
 
-    
 // https://www.typescriptlang.org/docs/handbook/basic-types.html
-    getClientes(){
-        fetch(
-            'http://localhost:3000/cliente',
-            {   method: 'GET',
-                mode: 'cors',
-        
-            }).then((response)=>{
-                response.json().then(function(data) {
-                    console.log(data);
-                    let clienteList = new Array<Cliente>(); 
+getClientes(){
+    return this.http.get<Cliente[]>('http://localhost:3000/cliente').pipe(
+        tap(console.log)
+    ); 
 
-                    data.forEach(element => {
-                        let cliente =  new Cliente();
-                        cliente.Id = element.id;
-                        cliente.email = element.email; 
-                        cliente.nome = element.nome; 
-                        clienteList.push(cliente); 
-                    });
-                    console.log(clienteList)
-                    return clienteList; 
-                  })
-        }).catch(response=> {return 'Não deu'+ response})
     }
 
 }
