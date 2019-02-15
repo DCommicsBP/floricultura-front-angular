@@ -1,8 +1,15 @@
 import {NgModule, Injectable} from '@angular/core'
 import { Cliente } from './cliente.class';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
 
+const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'my-auth-token'
+    })
+  };
 
 @Injectable()
 export class ClientesService{
@@ -23,5 +30,10 @@ getClientes(){
             tap(console.log)
         );
     }
+
+    updateCLiente (cli: Cliente): Observable<Cliente> {
+        return this.http.put<Cliente>(`http://localhost:3000/cliente`, cli, httpOptions).pipe();
+          
+      }
 }
 
