@@ -16,9 +16,12 @@ export class ClientesService{
 getClientes(){
     return this.http.get<Cliente[]>('http://localhost:3000/cliente').pipe(
         tap(console.log)
-    ); 
-
+    );
     }
-
+    getCliente(id: number){
+        return this.http.get<Cliente>(`http://localhost:3000/cliente/${id}`).pipe(
+            tap(console.log)
+        );
+    }
 }
 
