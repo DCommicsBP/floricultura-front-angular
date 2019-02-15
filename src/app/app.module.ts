@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PlantaDetalheComponent } from './plantas/planta-detalhe/planta-detalhe.component';
 import { ClienteDetalheComponent } from './clientes/cliente-detalhe/cliente-detalhe.component';
+import { LocalizacaoFiliaisComponent } from './localizacao-filiais/localizacao-filiais.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'plantas', component: PlantasComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'clientes', component:ClientesComponent },
+  { path: 'localizacao', component:LocalizacaoFiliaisComponent },
   {path: 'cliente/cliente-detalhe/:id', component:ClienteDetalheComponent}
 ];
 
@@ -33,7 +35,8 @@ const routes: Routes = [
     FooterComponent, 
     HomeComponent, 
     PlantaDetalheComponent,
-    ClientesComponent
+    ClientesComponent,
+    LocalizacaoFiliaisComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

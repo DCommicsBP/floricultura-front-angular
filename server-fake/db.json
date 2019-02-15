@@ -8,10 +8,10 @@
       { "id": 5, "nome": "Fernanda", "email": "fernanda@email.com" }
     ],
     "usuario": [
-      { "id": 1, "senha": "some comment", "usuario": "" }
+      { "id": 1, "senha": "some comment", "usuario": "", "nome":"" }
     ],
     "plantas":[ 
         
-        { "id": 1, "name": "typicode", "type": "typicode" }
+        { "id": 1, "nome": "typicode", "tipo": "typicode" }
     ]
   }

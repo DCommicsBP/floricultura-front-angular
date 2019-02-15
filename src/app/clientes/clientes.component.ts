@@ -17,4 +17,12 @@ export class ClientesComponent implements OnInit{
   ngOnInit(){
     this.cli.getClientes().subscribe(dados=> this.clientes = dados)
   }
+
+  excluir(){
+    console.log('Excluir funciona!'); 
+  }
+  editar(){
+    console.log('editar funciona')
+  }
+
 }
