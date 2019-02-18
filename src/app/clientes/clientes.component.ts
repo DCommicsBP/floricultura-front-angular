@@ -23,6 +23,7 @@ export class ClientesComponent implements OnInit{
     console.log('Excluir funciona!'); 
   }
   editar(cli){
+    debugger; 
     this.cli.updateCLiente(cli); 
   }
 

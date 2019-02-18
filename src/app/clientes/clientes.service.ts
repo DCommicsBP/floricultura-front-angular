@@ -32,8 +32,11 @@ getClientes(){
     }
 
     updateCLiente (cli: Cliente): Observable<Cliente> {
+        console.log('CLIENTE ++++>>', cli)
+        debugger; 
         return this.http.put<Cliente>(`http://localhost:3000/cliente`, cli, httpOptions).pipe();
           
       }
 }
 
+    
